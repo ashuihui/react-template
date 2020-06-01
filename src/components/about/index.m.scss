@@ -1,0 +1,36 @@
+
+.componentAbout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: green;
+    height: 100%;
+
+    .add {
+        cursor: pointer;
+        color: red
+    }
+
+    .reduce {
+        cursor: pointer;
+        color: blue
+    }
+
+    .hello {
+        color: black;
+        cursor: pointer;
+        font-size: 34px;
+        transition: all 1s;
+    }
+
+    .helloA {
+        color: green;
+        transform: scale(5, 5) rotate(360deg);
+        transform-origin: center center;
+
+    }
+    .go{
+        cursor: pointer;
+    }
+}

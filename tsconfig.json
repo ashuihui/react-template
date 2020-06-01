@@ -1,0 +1,53 @@
+{
+	"include": ["src"],
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"lib": ["es2015", "dom"],
+		"target": "es5",
+		"baseUrl": ".",
+		"jsx": "react",
+		"jsxFactory": "React.createElement",
+		"allowJs": true,
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"paths": {
+			"@src": ["src"],
+			"@src/*": ["src/*"],
+			"@common": ["src/common"],
+			"@common/*": ["src/common/*"],
+			"@config": ["src/config"],
+			"@config/*": ["src/config/*"],
+			"@utils": ["src/utils"],
+			"@utils/*": ["src/utils/*"],
+			"@assets": ["src/assets"],
+			"@assets/*": ["src/assets/*"],
+			"@models": ["src/models"],
+			"@models/*": ["src/models/*"],
+			"@actions": ["src/actions"],
+			"@actions/*": ["src/actions/*"],
+			"@reducers": ["src/reducers"],
+			"@reducers/*": ["src/reducers/*"],
+			"@constants": ["src/constants"],
+			"@constants/*": ["src/constants/*"],
+			"@interfaces": ["src/interfaces"],
+			"@interfaces/*": ["src/interfaces/*"],
+			"@components": ["src/components"],
+			"@components/*": ["src/components/*"],
+			"@containers": ["src/containers"],
+			"@containers/*": ["src/containers/*"]
+		},
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules",
+				"options": {
+					"customMatcher": "\\.m\\.(le|sa|sc|c)ss$",
+					"rendererOptions": {
+						"sass": {}
+					}
+				}
+			}
+		]
+	}
+}
