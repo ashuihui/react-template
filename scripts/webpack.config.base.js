@@ -50,10 +50,12 @@ module.exports = function (webpackEnv) {
 			vendor: [
 				'react',
 				'react-dom',
-				'react-redux',
 				'react-router-dom',
+				{{#if redux}}
+				'react-redux',
 				'redux',
 				'iron-redux',
+				{{/if}}
 			],
 		},
 		output: {
@@ -131,6 +133,7 @@ module.exports = function (webpackEnv) {
 						sassLoader,
 					],
 				},
+				{{#if antd}}
 				{
 					test: /\.less$/,
 					exclude: /\.m\.less$/,
@@ -142,6 +145,7 @@ module.exports = function (webpackEnv) {
 						lessAntd,
 					],
 				},
+				{{/if}}
 				{
 					test: /\.m\.less$/,
 					include: path.resolve('./src'),
@@ -178,7 +182,9 @@ module.exports = function (webpackEnv) {
 				filename: 'index.html',
 				template: './src/index.html',
 			}),
+			{{#if antd}}
 			new AntdDayjsWebpackPlugin(),
+			{{/if}}
 			new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime-.+[.]js/]),
 			new MiniCssExtractPlugin({
 				filename: isEnvProduction

@@ -30,6 +30,7 @@
 				"corejs": false
 			}
 		],
+		{{#if antd}}
 		[
 			"import",
 			{
@@ -38,6 +39,7 @@
 				"style": true
 			}
 		]
+		{{/if}}
 	],
 	"env": {
 		"test": {
@@ -73,6 +75,7 @@
 						"corejs": false
 					}
 				],
+				{{#if antd}}
 				[
 					"import",
 					{
@@ -81,6 +84,7 @@
 						"style": true
 					}
 				]
+				{{/if}}
 			]
 		}
 	}
