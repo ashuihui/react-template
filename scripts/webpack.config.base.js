@@ -109,7 +109,7 @@ module.exports = function (webpackEnv) {
 				},
 				{
 					test: /\.css$/,
-					use: ['style-loader', 'css-loader', 'postcss-loader']
+					use: [MiniCssExtractPlugin.loader,'css-loader', 'postcss-loader']
 				},
 				{
 					test: /\.scss$/,
@@ -137,11 +137,11 @@ module.exports = function (webpackEnv) {
 				{
 					test: /\.less$/,
 					exclude: /\.m\.less$/,
-					// include: path.resolve('./src/node_module/antd/'),
+					include: path.resolve('./src/node_module/antd/'),
 					use: [
 						MiniCssExtractPlugin.loader,
 						'css-loader',
-						'postcss-loader',
+						// 'postcss-loader',
 						lessAntd,
 					],
 				},
