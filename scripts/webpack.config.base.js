@@ -137,7 +137,7 @@ module.exports = function (webpackEnv) {
 				{
 					test: /\.less$/,
 					exclude: /\.m\.less$/,
-					include: path.resolve('./src/node_module/antd/'),
+					include: path.resolve('./node_module/antd/'),
 					use: [
 						MiniCssExtractPlugin.loader,
 						'css-loader',
@@ -148,6 +148,7 @@ module.exports = function (webpackEnv) {
 				{{/if}}
 				{
 					test: /\.m\.less$/,
+					exclude: /node_modules/,
 					include: path.resolve('./src'),
 					use: [
 						MiniCssExtractPlugin.loader,
